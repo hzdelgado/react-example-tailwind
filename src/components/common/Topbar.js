@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Topbar = () => {
+const Topbar = () => {  
   return (
-    <div>
+    <div className='flex'>
       
     </div>
   )
