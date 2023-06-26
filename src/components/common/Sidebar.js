@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import { sidebarOptions } from "../../data/Sidebar";
+import SidebarOption from "./SidebarOption";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -10,7 +12,7 @@ const Sidebar = () => {
         open ? "w-72" : "w-16"
       } h-screen p-4 bg-indigo-500 shadow-lg shadow-indigo-500/50 transition-all duration-300 rounded-r-lg`}
     >
-      <div className="space-y-10">
+      <div className="flex-col space-y-10">
         <div className="flex items-center justify-between">
           <button className="flex-1" onClick={() => setOpen(!open)}>
             <Bars3Icon className="w-7 h-7 text-white" />
@@ -24,6 +26,12 @@ const Sidebar = () => {
             Sidebar Example
           </div>
         </div>
+        <div className="space-y-3">{sidebarOptions.map((option) => (
+          <SidebarOption
+            collapsed={open}
+            option={option}
+          />
+        ))}</div>
       </div>
     </div>
   );
