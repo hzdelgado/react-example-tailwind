@@ -2,11 +2,10 @@ import React, { useState } from "react";
 
 const SidebarOption = ({ collapsed, option }) => {
   const [onHover, setOnHover] = useState(false);
-  console.log(option);
   return (
     <div
       className={`flex items-center h-12 transition-all duration-300 ${
-        onHover ? "bg-white" : "bg-transparent"
+        onHover ? "bg-white/50" : "bg-transparent"
       } rounded-md ${collapsed ? "p-3" : "justify-center"}`}
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => setOnHover(false)}
