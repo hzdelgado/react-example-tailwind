@@ -9,12 +9,12 @@ const Sidebar = () => {
   return (
     <div
       className={`flex ${
-        open ? "w-72" : "w-16"
-      } h-screen p-4 bg-indigo-500 shadow-lg shadow-indigo-500/50 transition-all duration-300 rounded-r-lg`}
+        open ? "w-72 p-4" : "w-16 p-3"
+      } h-screen bg-indigo-500 shadow-lg shadow-indigo-500/50 transition-all duration-300`}
     >
-      <div className="flex-col space-y-10">
-        <div className="flex items-center justify-between">
-          <button className="flex-1" onClick={() => setOpen(!open)}>
+      <div className="flex-col grow space-y-10">
+        <div className={`flex items-center ${open ? "justify-start" : "justify-center"}`}>
+          <button onClick={() => setOpen(!open)}>
             <Bars3Icon className="w-7 h-7 text-white" />
           </button>
           <div
